@@ -90,8 +90,8 @@ def update_graph(selected_region):
 
     fig = px.line(
         data_to_plot,
-        x = 'date', y =
-        'sales',
+        x = 'date',
+        y = 'sales',
         title = 'Pink Morsel Sales Over Time'
     )
 
