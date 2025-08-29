@@ -1,9 +1,14 @@
 from dash import Dash, html, dcc, Input, Output,  callback
 import pandas as pd
 import plotly.express as px
+import os
 
 #Data Preperation
-df = pd.read_csv("pink_morsel_sales_summary.csv")
+
+script_dir = os.path.dirname(__file__)
+csv_path = os.path.join(script_dir, "pink_morsel_sales_summary.csv")
+
+df = pd.read_csv(csv_path)
 df['date'] = pd.to_datetime(df['date']) #Convert the string date into int datetime
 df = df.sort_values(by='date')
 
